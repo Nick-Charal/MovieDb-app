@@ -20,6 +20,7 @@ const Header = () => {
         <div className='flex items-center'>
           <a href='/' className="btn no-animation bg-yellow-400 hover:bg-yellow-400 text-black text-xl mr-1">MDb</a>
           <label className="swap swap-rotate">
+          <input type="checkbox" className="theme-controller" value="light" />
           <svg
             className="swap-on h-7 w-7 fill-current "
             xmlns="http://www.w3.org/2000/svg"
