@@ -14,8 +14,8 @@ const nextConfig = {
     async redirects() {
         return [
             {
-                source: '/movie/about-us',
-                destination: '/about-us',
+                source: './movie/about-us',
+                destination: './about-us',
                 permanent: true
             }
         ]
