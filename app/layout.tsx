@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import NavBar from "@/components/NavBar";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "MDb",
@@ -17,7 +18,9 @@ export default function RootLayout({
     <html lang="en">
       <body data-theme=''>
         <Header />
-        <NavBar />
+        <Suspense>
+          <NavBar />
+        </Suspense>
         {children}
       </body>
     </html>

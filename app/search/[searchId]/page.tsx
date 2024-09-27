@@ -8,7 +8,11 @@ export default async function searchPage({params}) {
     const results = data.results;
   return (
     <div>
-        {results && <Results results={results}/>}
+        {results && 
+          <Results 
+            results={results}
+          />
+        }
     </div>
   )
 }
