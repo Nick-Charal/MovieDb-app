@@ -19,8 +19,8 @@ export async function generateStaticParams() {
   //   searchId: movie.id
   // }));
   return [
-    {id: '238'},
-    {id: '240'}
+    {id: '238', genres: {id: '18', name: 'Drama'}},
+    {id: '240', genres: {id: '18', name: 'Drama'}}
   ]
 }
 

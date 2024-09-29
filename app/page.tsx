@@ -7,7 +7,7 @@ export async function generateStaticParams() {
   ]
 }
 
-export const dynamic = 'force-static';
+// export const dynamic = 'force-static';
 
 export default async function Home({ searchParams }) {
   const genre = searchParams.genre || 'trending';
