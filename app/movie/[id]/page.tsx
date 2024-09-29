@@ -6,7 +6,25 @@ function getImageUrl(path: string) {
   return (`https://image.tmdb.org/t/p/original/${path}`)
 }
 
-export default async function moviePage({params}) {
+export async function generateStaticParams() {
+  // const resp = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.API_KEY}&language=en-US&page=1`);
+  // const data = await resp.json();
+  // const results = data.results;
+
+  // if (!resp.ok) {
+  //   throw new Error('Something went wrong');
+  // }
+
+  // return results.map((movie => {
+  //   searchId: movie.id
+  // }));
+  return [
+    {id: '238'},
+    {id: '240'}
+  ]
+}
+
+export default async function moviePage({ params }) {
   const resp = await fetch(`https://api.themoviedb.org/3/movie/${params.id}?api_key=${process.env.API_KEY}`);
   const respSim = await fetch(`https://api.themoviedb.org/3/movie/${params.id}/similar?api_key=${process.env.API_KEY}`);
   const result = await resp.json();
