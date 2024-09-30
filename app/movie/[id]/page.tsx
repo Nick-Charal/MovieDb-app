@@ -60,7 +60,7 @@ export default async function moviePage({ params }) {
           <p 
             className='font-semibold'
           >
-            {result.genres.map((genre) => {
+{/*             {result.genres.map((genre) => {
               return (
                 <span 
                   className='border rounded-md px-0.5 mr-0.5' 
@@ -69,7 +69,7 @@ export default async function moviePage({ params }) {
                   {genre.name}
                 </span>
               );
-            })}
+            })} */}
           </p>
           <p 
             className='my-2'
