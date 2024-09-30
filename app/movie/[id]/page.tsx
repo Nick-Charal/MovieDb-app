@@ -26,10 +26,10 @@ export async function generateStaticParams() {
 
 export default async function moviePage({ params }) {
   const resp = await fetch(`https://api.themoviedb.org/3/movie/${params.id}?api_key=${process.env.API_KEY}`);
-  const respSim = await fetch(`https://api.themoviedb.org/3/movie/${params.id}/similar?api_key=${process.env.API_KEY}`);
+  // const respSim = await fetch(`https://api.themoviedb.org/3/movie/${params.id}/similar?api_key=${process.env.API_KEY}`);
   const result = await resp.json();
-  const resultSim = await respSim.json();
-  const dataSim = resultSim.results;
+  // const resultSim = await respSim.json();
+  // const dataSim = resultSim.results;
 
   const path = result.backdrop_path || result.poster_path;
   const url = getImageUrl(path);
