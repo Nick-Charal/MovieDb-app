@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image';
-// import Link from 'next/link';
+import Link from 'next/link';
 
 function getImageUrl(path: string) {
   return (`https://image.tmdb.org/t/p/original/${path}`)
@@ -26,10 +26,10 @@ export async function generateStaticParams() {
 
 export default async function moviePage({ params }) {
   const resp = await fetch(`https://api.themoviedb.org/3/movie/${params.id}?api_key=${process.env.API_KEY}`);
-  // const respSim = await fetch(`https://api.themoviedb.org/3/movie/${params.id}/similar?api_key=${process.env.API_KEY}`);
+  const respSim = await fetch(`https://api.themoviedb.org/3/movie/${params.id}/similar?api_key=${process.env.API_KEY}`);
   const result = await resp.json();
-  // const resultSim = await respSim.json();
-  // const dataSim = resultSim.results;
+  const resultSim = await respSim.json();
+  const dataSim = resultSim.results;
 
   const path = result.backdrop_path || result.poster_path;
   const url = getImageUrl(path);
@@ -60,7 +60,7 @@ export default async function moviePage({ params }) {
           <p 
             className='font-semibold'
           >
-{/*             {result.genres.map((genre) => {
+            {result.genres.map((genre) => {
               return (
                 <span 
                   className='border rounded-md px-0.5 mr-0.5' 
@@ -69,7 +69,7 @@ export default async function moviePage({ params }) {
                   {genre.name}
                 </span>
               );
-            })} */}
+            })}
           </p>
           <p 
             className='my-2'
@@ -144,7 +144,7 @@ export default async function moviePage({ params }) {
         className='font-bold text-center'
       >
         Similar Movies
-{/*         <div 
+        <div 
           className='2xl:grid-cols-7 xl:grid-cols-6 lg:grid-cols-5 sm:grid-cols-4 sm:grid text-center p-8'
         >
           {dataSim.map((movie) => {
@@ -178,7 +178,7 @@ export default async function moviePage({ params }) {
             )
           })
           }
-        </div> */}
+        </div>
       </div>
     </div>
   )
