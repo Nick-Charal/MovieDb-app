@@ -144,7 +144,7 @@ export default async function moviePage({ params }) {
         className='font-bold text-center'
       >
         Similar Movies
-        <div 
+{/*         <div 
           className='2xl:grid-cols-7 xl:grid-cols-6 lg:grid-cols-5 sm:grid-cols-4 sm:grid text-center p-8'
         >
           {dataSim.map((movie) => {
@@ -178,7 +178,7 @@ export default async function moviePage({ params }) {
             )
           })
           }
-        </div>
+        </div> */}
       </div>
     </div>
   )
