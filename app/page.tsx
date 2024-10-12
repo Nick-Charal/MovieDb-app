@@ -1,11 +1,11 @@
 import Results from '@/components/Results';
 
-export async function generateStaticParams() {
-  return [
-    {genre: 'topRated'},
-    {genre: 'trending'}
-  ]
-}
+// export async function generateStaticParams() {
+//   return [
+//     {genre: 'topRated'},
+//     {genre: 'trending'}
+//   ]
+// }
 
 // export const dynamic = 'force-static';
 
